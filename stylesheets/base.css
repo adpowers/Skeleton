@@ -28,6 +28,16 @@
 ================================================== */
 @def STANDARD_FONTS "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+@defmixin gradient(RGB_START, ALPHA_START, RGB_END, ALPHA_END, FALLBACK) {
+background: FALLBACK; /* Old browsers */
+/* @alternate */ background: FALLBACK -moz-linear-gradient(top, rgba(RGB_START,RGB_START,RGB_START,ALPHA_START) 0%, rgba(RGB_END,RGB_END,RGB_END,ALPHA_END) 100%); /* FF3.6+ */
+/* @alternate */ background: FALLBACK -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(RGB_START,RGB_START,RGB_START,ALPHA_START)), color-stop(100%,rgba(RGB_END,RGB_END,RGB_END,ALPHA_END))); /* Chrome,Safari4+ */
+/* @alternate */ background: FALLBACK -webkit-linear-gradient(top, rgba(RGB_START,RGB_START,RGB_START,ALPHA_START) 0%,rgba(RGB_END,RGB_END,RGB_END,ALPHA_END) 100%); /* Chrome10+,Safari5.1+ */
+/* @alternate */ background: FALLBACK -o-linear-gradient(top, rgba(RGB_START,RGB_START,RGB_START,ALPHA_START) 0%,rgba(RGB_END,RGB_END,RGB_END,ALPHA_END) 100%); /* Opera11.10+ */
+/* @alternate */ background: FALLBACK -ms-linear-gradient(top, rgba(RGB_START,RGB_START,RGB_START,ALPHA_START) 0%,rgba(RGB_END,RGB_END,RGB_END,ALPHA_END) 100%); /* IE10+ */
+/* @alternate */ background: FALLBACK linear-gradient(top, rgba(RGB_START,RGB_START,RGB_START,ALPHA_START) 0%,rgba(RGB_END,RGB_END,RGB_END,ALPHA_END) 100%); /* W3C */
+}
+
 
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
@@ -139,13 +149,7 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"] {
-		background: #eee; /* Old browsers */
-		/* @alternate */ background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
-		/* @alternate */ background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
-		/* @alternate */ background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
-		/* @alternate */ background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
-		/* @alternate */ background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
-		/* @alternate */ background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	  @mixin gradient(255, .2, 0, .2, #eee);
 	  border: 1px solid #aaa;
 	  border-top: 1px solid #ccc;
 	  border-left: 1px solid #ccc;
@@ -171,13 +175,7 @@
 	input[type="reset"]:hover,
 	input[type="button"]:hover {
 		color: #222;
-		background: #ddd; /* Old browsers */
-		/* @alternate */ background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
-		/* @alternate */ background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
-		/* @alternate */ background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
-		/* @alternate */ background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
-		/* @alternate */ background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
-		/* @alternate */ background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+	  @mixin gradient(255, .3, 0, .3, #ddd);
 	  border: 1px solid #888;
 	  border-top: 1px solid #aaa;
 	  border-left: 1px solid #aaa; }
@@ -188,13 +186,7 @@
 	input[type="reset"]:active,
 	input[type="button"]:active {
 		border: 1px solid #666;
-		background: #ccc; /* Old browsers */
-		/* @alternate */ background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
-		/* @alternate */ background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
-		/* @alternate */ background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
-		/* @alternate */ background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
-		/* @alternate */ background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
-		/* @alternate */ background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
+        @mixin gradient(255, .35, 10, .4, #ccc); }
 
 	.button.full-width,
 	button.full-width,
