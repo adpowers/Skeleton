@@ -1,3 +1,6 @@
 A fork of the Skeleton framework that makes use of closure stylesheets.
 
 http://code.google.com/p/closure-stylesheets/
+
+To use, download the closure jar to scripts/closure-stylesheets.jar and run
+scripts/stylesheets.sh.
