@@ -10,6 +10,7 @@
 
 /* Table of Content
 ==================================================
+	#Closure Definitions
 	#Reset & Basics
 	#Basic Styles
 	#Site Styles
@@ -21,6 +22,11 @@
 	#Tabs
 	#Forms
 	#Misc */
+
+
+/* Closure Definitions
+================================================== */
+@def STANDARD_FONTS "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
 /* #Reset & Basics (Inspired by E. Meyers)
@@ -53,7 +59,7 @@
 ================================================== */
 	body {
 		background: #fff;
-		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 14px/21px STANDARD_FONTS;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
@@ -157,7 +163,7 @@
 	  margin-bottom: 20px;
 	  line-height: normal;
 	  /* @alternate */ padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	  font-family: STANDARD_FONTS; }
 
 	.button:hover,
 	button:hover,
@@ -298,7 +304,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 13px STANDARD_FONTS;
 		color: #777;
 		margin: 0;
 		width: 210px;
